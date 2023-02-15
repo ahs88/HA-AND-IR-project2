@@ -12,7 +12,7 @@
    instance_count     = var.instance_count
    name               = local.name
    account            = data.aws_caller_identity.current.account_id
-   aws_ami            = "ami-04703614e5a6bedfc"
+   aws_ami            = "ami-0455849cde8d9fb9d"
    private_subnet_ids = data.terraform_remote_state.vpc.outputs.private_subnet_ids
    public_subnet_ids = data.terraform_remote_state.vpc.outputs.public_subnet_ids
    vpc_id             = data.terraform_remote_state.vpc.outputs.vpc_id
