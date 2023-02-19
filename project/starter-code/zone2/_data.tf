@@ -19,26 +19,8 @@ data "aws_caller_identity" "current" {}
 data "terraform_remote_state" "vpc" {
   backend = "s3" 
   config = {
-     bucket = "udacity-tf-ahs"
+     bucket = "udacity-tf-ahs-west"
      key    = "terraform/terraform.tfstate"
-     region = "us-east-2"
+     region = "us-west-1"
    }
-
-
-}
-
-data "aws_iam_policy" "instance-policy" {
-  name = "app-udacity-instance-policy"
-}
-
-data "aws_iam_policy" "cloudwatch-policy" {
-  name = "app-udacity-eks-cluster-role-cloudwatch-policy"
-}
-
-data "aws_iam_role" "eks_cluster_role" {
-  name = "app-udacity-eks-cluster-role"
-}
-
-data "aws_iam_role" "eks_node_role" {
-  name = "app-udacity-eks-node-role"
 }

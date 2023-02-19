@@ -37,7 +37,24 @@ locals {
     public_subnet_tags = {
       "kubernetes.io/role/elb" = 1
     }
-   providers = {
-     aws = aws.usw1
-   }
+   
+  }
+
+
+ provider "aws" {
+  alias  = "usw1"
+  region = "us-west-1"
+ }
+
+
+  output "vpc_id" {
+    value = module.vpc_west.vpc_id
+  }
+
+  output "private_subnet_ids" {
+    value = module.vpc_west.private_subnet_ids
+  }
+
+  output "public_subnet_ids" {
+    value = module.vpc_west.public_subnet_ids
   }

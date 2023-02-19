@@ -11,10 +11,10 @@
    }
  }
 
-#   resource "aws_iam_role" "eks_cluster_role" {
-#    name               = "app-${var.name}-eks-cluster-role"
-#    assume_role_policy = data.aws_iam_policy_document.eks_assume_role_policy.json
-#  }
+   resource "aws_iam_role" "eks_cluster_role" {
+    name               = "app-${var.name}-eks-cluster-role"
+    assume_role_policy = data.aws_iam_policy_document.eks_assume_role_policy.json
+  }
 
   resource "aws_iam_role_policy_attachment" "cluster_AmazonEKSClusterPolicy" {
    policy_arn = "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
@@ -39,10 +39,10 @@
    }
  }
 
-#   resource "aws_iam_role" "eks_node_cluster_role" {
-#    name               = "app-${var.name}-eks-node-role"
-#    assume_role_policy = data.aws_iam_policy_document.eks_node_assume_role_policy.json
-#  }
+   resource "aws_iam_role" "eks_node_cluster_role" {
+    name               = "app-${var.name}-eks-node-role"
+    assume_role_policy = data.aws_iam_policy_document.eks_node_assume_role_policy.json
+  }
 
   resource "aws_iam_role_policy_attachment" "cluster_AmazonEKSCloudwatchPolicy" {
    role       = "app-udacity-eks-node-role"

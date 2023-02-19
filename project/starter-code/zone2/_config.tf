@@ -1,17 +1,16 @@
 terraform {
    backend "s3" {
-     bucket = "udacity-tf-ahs-west"
+     bucket = "udacity-tf-ahs"
      key    = "terraform/terraform.tfstate"
-     region = "us-west-1"
+     region = "us-east-2"
    }
  }
 
  provider "aws" {
-   region = "us-west-1"
-   #profile = "default"
+  region = "us-west-1"
   profile="ahs-udacity"
-  shared_config_files      = ["/Users/akshath/.aws/config"]
-  shared_credentials_files = ["/Users/akshath/.aws/credentials"]     
+  shared_config_files      = ["/home/cloudshell-user/.aws/config"]
+  shared_credentials_files = ["/home/cloudshell-user/.aws/credentials"]   
    default_tags {
      tags = local.tags
    }
